@@ -119,8 +119,10 @@ const ListarTarefa = () => {
                       <TableCell align="right">{row.descricaoTarefa}</TableCell>
                       <TableCell align="right">{row.inicioTarefa}</TableCell>
                       <TableCell align="right">{row.fimTarefa}</TableCell>
-                      <TableCell align="right">{row.statusTarefa}</TableCell>
-                      <TableCell align="right">{row.recursoTarefa}</TableCell>
+                    <TableCell align="right"
+                      sx={{ backgroundColor: getRowColor(row.statusTarefa), fontWeight: 'bold' }}
+                    >{row.statusTarefa}</TableCell>
+                    <TableCell align="right">{row.recursoTarefa}</TableCell>
                       <TableCell align="center">
                         <Button variant="contained" color="success" onClick={() => handleEditar(row.idTarefa)}><EditIcon fontSize="small" /></Button>            
                       </TableCell>
@@ -165,5 +167,19 @@ const ListarTarefa = () => {
   </>    
  );
 };
+
+const getRowColor = (status) => {
+  switch (status) {
+    case 'Aguardando':
+      return 'rgba(255, 0, 0, 0.2)'; // Vermelho claro
+    case 'Em Andamento':
+      return 'rgba(255, 255, 0, 0.2)'; // Amarelo claro
+    case 'Concluída':
+      return 'rgba(0, 0, 255, 0.2)'; // Azul claro
+    default:
+      return 'transparent'; // Sem cor
+  }
+};
+
  
 export default ListarTarefa;
