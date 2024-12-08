@@ -150,17 +150,97 @@ const ListarTarefa = () => {
             >
               <TableHead>
                 <TableRow>
-                  <TableCell>#</TableCell>
-                  <TableCell>Título</TableCell>
-                  <TableCell align="right">Descrição</TableCell>
-                  <TableCell align="right">Data de Início</TableCell>
-                  <TableCell align="right">Data de Finalização</TableCell>
-                  <TableCell align="right">Status</TableCell>
-                  <TableCell align="right">Recurso</TableCell>
-                  <TableCell align="center">Editar</TableCell>
-                  <TableCell align="center">Excluir</TableCell>
+                  <TableCell
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem", // Tamanho da fonte
+                      color: "#000", // Cor da fonte (preto)
+                    }}
+                  >
+                    #
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      color: "#000",
+                    }}
+                  >
+                    Título
+                  </TableCell>
+                  <TableCell
+                    align="right"
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      color: "#000",
+                    }}
+                  >
+                    Descrição
+                  </TableCell>
+                  <TableCell
+                    align="right"
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      color: "#000",
+                    }}
+                  >
+                    Data de Início
+                  </TableCell>
+                  <TableCell
+                    align="right"
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      color: "#000",
+                    }}
+                  >
+                    Data de Finalização
+                  </TableCell>
+                  <TableCell
+                    align="right"
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      color: "#000",
+                    }}
+                  >
+                    Status
+                  </TableCell>
+                  <TableCell
+                    align="right"
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      color: "#000",
+                    }}
+                  >
+                    Recurso
+                  </TableCell>
+                  <TableCell
+                    align="center"
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      color: "#000",
+                    }}
+                  >
+                    Editar
+                  </TableCell>
+                  <TableCell
+                    align="center"
+                    sx={{
+                      fontWeight: "bold",
+                      fontSize: "1rem",
+                      color: "#000",
+                    }}
+                  >
+                    Excluir
+                  </TableCell>
                 </TableRow>
               </TableHead>
+
               <TableBody>
                 {tarefas.map((row, indice) => (
                   <TableRow
