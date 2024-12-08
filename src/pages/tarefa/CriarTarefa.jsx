@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import { FormControl, InputLabel, Input, FormHelperText } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
@@ -6,10 +7,8 @@ import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 
-//Declaração do componente CriarTarefa, recebendo como props, do Componente ListarTarefa, os states handClose, tarefas e setTarefas
 const CriarTarefa = ({handleClose, tarefas, setTarefas}) =>{
   const [idTarefa, setIdTarefa] = useState();
   const [tituloTarefa, setTituloTarefa] = useState('');
@@ -20,7 +19,6 @@ const CriarTarefa = ({handleClose, tarefas, setTarefas}) =>{
   const [statusTarefa, setStatusTarefa] = useState('');
   
   useEffect(() => {
-    //Abaixo uma variável é declarada para armazenar o id da tarefa, somando 1 ao maior id existente atualmente no state Tarefas
     let proximoId = Math.max(...tarefas.map(tarefa => tarefa.idTarefa)) + 1;
     setIdTarefa(proximoId);
   },[]);
@@ -34,8 +32,6 @@ const CriarTarefa = ({handleClose, tarefas, setTarefas}) =>{
   };
 
   const handleSalvar = () => {
-    //Para inspecionarmos nosso código, uma boa estratégia é utilizarmos o console.log.
-    //  Com o console.log, podemos visualizar o seu conteúdo na aba Console, no inspecionador de elementos, na janela do navegador
     console.log(`id: ${idTarefa} \n titulo: ${tituloTarefa} \n descrição: ${descricaoTarefa} \n inicio: ${inicioTarefa} \n fim: ${fimTarefa} \n recurso: ${recursoTarefa} \n status: ${statusTarefa}`);
 
     setTarefas(
@@ -50,7 +46,6 @@ const CriarTarefa = ({handleClose, tarefas, setTarefas}) =>{
           statusTarefa
         }
       ]);
-    //console.log(`Tarefas: ` + JSON.stringify(tarefas));
     handleClose();
   };
 

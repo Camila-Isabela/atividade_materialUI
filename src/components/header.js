@@ -12,12 +12,10 @@ import WorkIcon from "@mui/icons-material/Work";
 function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
-  // Abrir o menu
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
-  // Fechar o menu
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
